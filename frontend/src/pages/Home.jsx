@@ -1,11 +1,11 @@
-import BookingForm from '../components/Home/BookingForm'
+import CenterPage from '../components/Home/CenterPage'
 import Navbar from '../components/Navbar'
 
 const Home = () => {
   return (
     <>
       <Navbar />
-      <BookingForm />
+      <CenterPage />
     </>
   );
 };
