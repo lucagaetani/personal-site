@@ -1,7 +1,8 @@
 import * as React from 'react';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
+import AppsIcon from '@mui/icons-material/Apps';
 import MenuIcon from '@mui/icons-material/Menu';
+import HomeIcon from '@mui/icons-material/Home';
+import InfoIcon from '@mui/icons-material/Info';
 import {
   AppBar,
   Box,
@@ -29,7 +30,7 @@ export default function MenuAppBar() {
             edge="start"
             color="inherit"
             aria-label="menu"
-            sx={{ mr: 2, color: "black" }}
+            sx={{ mr: 2, color: "#553d3a" }}
             onClick={() => setOpenDrawer(!openDrawer)}
           >
           
@@ -42,40 +43,52 @@ export default function MenuAppBar() {
             onOpen={() => setOpenDrawer(true)}
           >
             <Box
-              sx={{ width: 250 }}
+              sx={{ width: 250, backgroundColor: "wheat", color: "#553d3a", height: "100vh" }}
               role="presentation"
               onClick={() => setOpenDrawer(!false)}
               onKeyDown={() => setOpenDrawer(!false)}
             >
               <List>
-                {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-                  <ListItem key={text} disablePadding>
-                    <ListItemButton>
-                      <ListItemIcon>
-                        {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                      </ListItemIcon>
-                      <ListItemText primary={text} />
-                    </ListItemButton>
-                  </ListItem>
-                ))}
+                <ListItem disablePadding>
+                  <ListItemButton>
+                    <ListItemIcon>
+                      <HomeIcon />
+                    </ListItemIcon>
+                    <ListItemText primary={"Home"} />
+                  </ListItemButton>
+                </ListItem>
+                <ListItem disablePadding>
+                  <ListItemButton>
+                    <ListItemIcon>
+                      <AppsIcon />
+                    </ListItemIcon>
+                    <ListItemText primary={"Project1"} />
+                  </ListItemButton>
+                </ListItem>
+                <ListItem disablePadding>
+                  <ListItemButton>
+                    <ListItemIcon>
+                      <AppsIcon />
+                    </ListItemIcon>
+                    <ListItemText primary={"Project2"} />
+                  </ListItemButton>
+                </ListItem>
               </List>
               <Divider />
               <List>
-                {['All mail', 'Trash', 'Spam'].map((text, index) => (
-                  <ListItem key={text} disablePadding>
-                    <ListItemButton>
-                      <ListItemIcon>
-                        {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                      </ListItemIcon>
-                      <ListItemText primary={text} />
-                    </ListItemButton>
-                  </ListItem>
-                ))}
+                <ListItem disablePadding>
+                  <ListItemButton>
+                    <ListItemIcon>
+                      <InfoIcon />
+                    </ListItemIcon>
+                    <ListItemText primary={"About"} />
+                  </ListItemButton>
+                </ListItem>
               </List>
             </Box>
           </SwipeableDrawer>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1, color: "black" }} fontWeight={"bold"}>
-            My Personal Site
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1, color: "#553d3a" }} fontWeight={"bold"}>
+            Luca Gaetani
           </Typography>
         </Toolbar>
       </AppBar>
